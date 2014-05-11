@@ -1,0 +1,12 @@
+varying vec4 color;
+varying vec2 texCoord0;
+
+uniform sampler2D u_tex0;
+
+void main()
+{
+	vec4 texColor = texture(u_tex0, texCoord0);
+	texColor.rgb = color.rgb;
+	texColor.a *= color.a;
+	gl_FragColor = texColor;
+}
